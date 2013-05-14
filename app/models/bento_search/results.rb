@@ -49,6 +49,10 @@ module BentoSearch
     # may be nil if used with an unregistered engine.
     attr_accessor :engine_id
     
+    # engine-specific data not suitable for abstract API, usually
+    # for internal use. 
+    attr_accessor :custom_data
+    
     # Returns a BentoSearch::Results::Pagination, that should be suitable
     # for passing right to Kaminari (although Kaminari isn't good about doc/specing
     # it's api, so might break), or convenient methods for your own custom UI. 
