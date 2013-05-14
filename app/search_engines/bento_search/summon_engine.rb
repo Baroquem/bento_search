@@ -186,6 +186,11 @@ class BentoSearch::SummonEngine
       results << item
     end
     
+    # Check for the presence of Summon recommendations (e.g., database recommendations 
+    # or 'best bets') and add them to the results if present.
+    if hash['recommendationLists']
+      results.custom_data = { :recommendationLists => hash['recommendationLists'] }
+    end
     
     return results
   end
